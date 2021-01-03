@@ -15,7 +15,7 @@ def odd_xor(arr: list):
         int: count of odd XOR pairs
     """
     if len(arr) == 1:
-        return 1
+        return 0
 
     count = 0
     left_index = 0
