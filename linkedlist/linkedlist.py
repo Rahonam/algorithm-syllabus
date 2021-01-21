@@ -4,7 +4,13 @@ class Node:
         self.next = None
 
     def __repr__(self):
-        return self.data
+        return str(self.data)
+
+    def __lt__(self, other):
+        return self.data < other.data
+
+    def __le__(self, other):
+        return self.data <= other.data
 
 class LinkedList:
     def __init__(self, nodes=None):
