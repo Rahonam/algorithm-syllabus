@@ -52,5 +52,50 @@ def rotate(arr:list, d:int):
     return arr
 
 
+def reverse(arr:list, start:int, end:int):
+    """
+    Rverse the elements of the given array 
+
+    using: iteration, time O(n) space O(1)
+
+    Args:
+        arr: array of integers
+        start: first index
+        end: last index
+    
+    Returns:
+        array: the reversed array
+    """
+    while start < end:
+        arr[start], arr[end] = arr[end], arr[start]
+        start += 1
+        end -= 1
+    return arr
+
+def rotateReversal(arr:list, d:int):
+    """
+    Rotate the given array by d elements 
+
+    using: iteration, Reversal algorithm time O(n) space O(1)
+
+    Args:
+        arr: array of integers
+        d: number of elements to rotate
+    
+    Returns:
+        array: the rotated array
+    """
+    reverse(arr, 0, d - 1)
+    reverse(arr, d, len(arr) - 1)
+    reverse(arr, 0, len(arr) - 1)
+
+    return arr
+
+
 print(rotate([1, 2, 3, 4, 5, 6, 7], 2))
 print(rotate([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 3))
+
+print(rotateReversal([1, 2, 3, 4, 5, 6, 7], 2))
+print(rotateReversal([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 3))
+
+print(reverse([1, 2, 3, 4, 5, 6, 7], 0, 6))
