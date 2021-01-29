@@ -3,12 +3,13 @@ def rearrange(arr:list):
     """
     Rearrange an array in order – smallest, largest, 2nd smallest, 2nd largest, and so on
     
-    using: iteration, sorting, time O(log(n)), space O(1)
+    using: iteration, sorting, time O(log(n)), space O(n)
 
     Args:
         arr: array of integers
     
     Returns:
+        array: rearranged array
     """
     arr.sort() 
     n = len(arr)
